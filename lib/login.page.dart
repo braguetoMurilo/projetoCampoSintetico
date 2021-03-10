@@ -85,14 +85,14 @@ class LoginPage extends StatelessWidget {
               child: SizedBox.expand(
                   child: FlatButton(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
                       "Login",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 20.0,
+                        fontSize: 25.0,
                       ),
                     ),
                   ],
@@ -118,7 +118,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Login com Facebook",
+                      "Facebook",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
