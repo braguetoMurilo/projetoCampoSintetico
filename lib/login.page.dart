@@ -115,7 +115,7 @@ class LoginPage extends StatelessWidget {
               child: SizedBox.expand(
                   child: FlatButton(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
                       "Facebook",
@@ -125,13 +125,13 @@ class LoginPage extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
-                    Container(
+                   /* Container(
                       child: SizedBox(
                         child: Image.asset("images/icon.png"),
                         height: 28,
                         width: 28,
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
                 onPressed: () {},
