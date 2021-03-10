@@ -5,6 +5,11 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage("images/futebool.jpg"),
+          fit: BoxFit.cover,
+        )),
         padding: EdgeInsets.only(
           top: 60.0,
           left: 40.0,
@@ -13,12 +18,12 @@ class LoginPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(
-              width: 128.0,
-              height: 128.0,
               child: Image.asset(
                 "images/logo.png",
                 fit: BoxFit.none,
               ),
+              width: 128.0,
+              height: 128.0,
             ),
             SizedBox(
               height: 20.0,
@@ -28,9 +33,9 @@ class LoginPage extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "E-mail ou Nome de usuário",
                 labelStyle: TextStyle(
-                  color: Colors.black38,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 25.0,
                 ),
               ),
               style: TextStyle(
@@ -46,9 +51,9 @@ class LoginPage extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "Senha",
                 labelStyle: TextStyle(
-                  color: Colors.black38,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 25.0,
                 ),
               ),
               style: TextStyle(
@@ -57,7 +62,7 @@ class LoginPage extends StatelessWidget {
             ),
             Container(
               height: 40.0,
-              alignment: Alignment.centerRight,
+              alignment: Alignment.center,
               child: FlatButton(
                 child: Text(
                   "Recuperar Senha",
@@ -69,8 +74,8 @@ class LoginPage extends StatelessWidget {
               height: 40.0,
             ),
             Container(
-              height: 60,
-              alignment: Alignment.centerRight,
+              height: 60.0,
+              alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.all(
@@ -87,7 +92,7 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: 20.0,
                       ),
                     ),
                   ],
@@ -99,7 +104,7 @@ class LoginPage extends StatelessWidget {
               height: 10.0,
             ),
             Container(
-              height: 60,
+              height: 60.0,
               alignment: Alignment.centerRight,
               decoration: BoxDecoration(
                 color: Colors.blueAccent,
