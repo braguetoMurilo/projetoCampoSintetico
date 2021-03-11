@@ -102,7 +102,6 @@ class ResetPasswordPage extends StatelessWidget {
           ],
         ),
       ),
-
     );
   }
 }

@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
           fit: BoxFit.cover,
         )),
         padding: EdgeInsets.only(
-          top: 60.0,
+          top: 35.0,
           left: 40.0,
           right: 40.0,
         ),
@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
               height: 128.0,
             ),
             SizedBox(
-              height: 20.0,
+              height: 40.0,
             ),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
