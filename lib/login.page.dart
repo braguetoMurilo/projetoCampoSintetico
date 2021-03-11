@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_campo/reset-password.page.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -66,8 +67,20 @@ class LoginPage extends StatelessWidget {
               child: FlatButton(
                 child: Text(
                   "Recuperar Senha",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResetPasswordPage(),
+                    ),
+                  );
+                },
               ),
             ),
             SizedBox(
@@ -146,6 +159,11 @@ class LoginPage extends StatelessWidget {
                 child: Text(
                   "Cadastre-se",
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  ),
                 ),
                 onPressed: () {},
               ),
