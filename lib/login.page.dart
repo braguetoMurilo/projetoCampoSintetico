@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_campo/reset-password.page.dart';
+import 'package:projeto_campo/who.are.you.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -165,7 +166,14 @@ class LoginPage extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => WhoAreYou()
+                    ),
+                  );
+                },
               ),
             )
           ],
