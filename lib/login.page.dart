@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_campo/reset-password.page.dart';
 import 'package:projeto_campo/who.are.you.dart';
+import 'package:projeto_campo/tela.inicial.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -111,7 +112,14 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TelaIncial(),
+                    ),
+                  );
+                },
               )),
             ),
             SizedBox(
