@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_campo/reset-password.page.dart';
 import 'package:projeto_campo/who.are.you.dart';
-import 'package:projeto_campo/tela.inicial.dart';
-import 'package:projeto_campo/pesquisaCidade.dart';
+import 'package:projeto_campo/choose.field.dart';
+import 'package:projeto_campo/field.research.dart';
 
 
 class LoginPage extends StatelessWidget {
