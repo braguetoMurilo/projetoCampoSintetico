@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto_campo/reset-password.page.dart';
 import 'package:projeto_campo/who.are.you.dart';
 import 'package:projeto_campo/tela.inicial.dart';
+import 'package:projeto_campo/pesquisaCidade.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -116,7 +117,7 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => TelaIncial(),
+                      builder: (context) => DropDown(),
                     ),
                   );
                 },
