@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_campo/register.user.field.owner.dart';
+import 'package:projeto_campo/register.user.jogador.dart';
+
 
 class WhoAreYou extends StatelessWidget {
   @override
@@ -40,7 +43,14 @@ class WhoAreYou extends StatelessWidget {
                   child: FlatButton(
                     child: Text("Jogador",
                         style: TextStyle(fontSize: 30.0, color: Colors.white)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FormPlayer()
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
@@ -48,7 +58,14 @@ class WhoAreYou extends StatelessWidget {
                   child: FlatButton(
                     child: Text("  Dono\n     de\n Campo",
                         style: TextStyle(fontSize: 30.0, color: Colors.white)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FormFieldOwner()
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
