@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "626812760758",
+    "project_id": "camposintetico-b33f6",
+    "storage_bucket": "camposintetico-b33f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626812760758:android:755a4eeb5940b792d3ec17",
+        "android_client_info": {
+          "package_name": "projetocampo.com.projeto_campo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626812760758-431nnbetvp0ddctkv92nl2grg6rjcv77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO1PWbdYGArHIXXK3dj_7mQuGWRxdT9qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626812760758-431nnbetvp0ddctkv92nl2grg6rjcv77.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
