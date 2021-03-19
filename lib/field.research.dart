@@ -9,17 +9,29 @@ class _DropDownState extends State<DropDown> {
   String nomeCidade = "";
   var _cidades = ['Cascavel', 'Toledo', 'Palotina'];
   var _itemSelecionado = "Cascavel";
+  String _price;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      backgroundColor: Colors.amberAccent,
+      appBar: AppBar(
+        backgroundColor: Colors.black54,
+        elevation: 0.0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Colors.black,
+          onPressed: () => Navigator.pop(context, false),
+        ),
+      ),
+      backgroundColor: Colors.white,
       body: criaDropDownButton(),
     );
   }
+
   criaDropDownButton() {
     return Container(
+        child: SingleChildScrollView(
       child: Column(
         children: <Widget>[
           SizedBox(
@@ -51,12 +63,44 @@ class _DropDownState extends State<DropDown> {
             },
             value: _itemSelecionado,
           ),
+          TextFormField(
+            decoration: InputDecoration(
+                labelText: 'Preço :',
+                labelStyle: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 24.0,
+                )),
+            validator: (String value) {
+              if (value.isEmpty) {
+                return "Preço é um campo obrigatorio";
+              }
+            },
+            onSaved: (String value) {
+              _price = value;
+            },
+          ),
+          SizedBox(
+            height: 30.0,
+          ),
+          RaisedButton(
+            color: Colors.red,
+            child: Text(
+              'Confirmar filtros',
+              style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+            onPressed: () {
+              if (!_formKey.currentState.validate()) {
+                return;
+              }
+              _formKey.currentState.save();
+            },
+          ),
         ],
       ),
-    );
+    ));
   }
 
- void _dropDownItemSelected(String novoItem) {
+  void _dropDownItemSelected(String novoItem) {
     setState(() {
       this._itemSelecionado = novoItem;
     });

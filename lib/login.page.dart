@@ -12,9 +12,9 @@ class LoginPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage("images/futebool.jpg"),
-          fit: BoxFit.cover,
-        )),
+              image: AssetImage("images/futebool.jpg"),
+              fit: BoxFit.cover,
+            )),
         padding: EdgeInsets.only(
           top: 35.0,
           left: 40.0,
@@ -101,28 +101,28 @@ class LoginPage extends StatelessWidget {
               ),
               child: SizedBox.expand(
                   child: FlatButton(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "Login",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 25.0,
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "Login",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 25.0,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DropDown(),
-                    ),
-                  );
-                },
-              )),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DropDown(),
+                        ),
+                      );
+                    },
+                  )),
             ),
             SizedBox(
               height: 10.0,
@@ -138,28 +138,28 @@ class LoginPage extends StatelessWidget {
               ),
               child: SizedBox.expand(
                   child: FlatButton(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "Facebook",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                    ),
-                   /* Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "Facebook",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                        /* Container(
                       child: SizedBox(
                         child: Image.asset("images/icon.png"),
                         height: 28,
                         width: 28,
                       ),
                     ),*/
-                  ],
-                ),
-                onPressed: () {},
-              )),
+                      ],
+                    ),
+                    onPressed: () {},
+                  )),
             ),
             SizedBox(
               height: 10.0,
