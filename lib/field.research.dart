@@ -28,7 +28,6 @@ class _DropDownState extends State<DropDown> {
       body: criaDropDownButton(),
     );
   }
-
   criaDropDownButton() {
     return Container(
         child: SingleChildScrollView(
@@ -63,24 +62,9 @@ class _DropDownState extends State<DropDown> {
             },
             value: _itemSelecionado,
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                labelText: 'Preço :',
-                labelStyle: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 24.0,
-                )),
-            validator: (String value) {
-              if (value.isEmpty) {
-                return "Preço é um campo obrigatorio";
-              }
-            },
-            onSaved: (String value) {
-              _price = value;
-            },
-          ),
+
           SizedBox(
-            height: 30.0,
+            height: 50.0,
           ),
           RaisedButton(
             color: Colors.red,
