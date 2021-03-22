@@ -6,10 +6,9 @@ class DropDown extends StatefulWidget {
 }
 
 class _DropDownState extends State<DropDown> {
-  String nomeCidade = "";
+
   var _cidades = ['Cascavel', 'Toledo', 'Palotina'];
   var _itemSelecionado = "Cascavel";
-  String _price;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -43,11 +42,15 @@ class _DropDownState extends State<DropDown> {
               "Selecione a cidade",
               style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 30,
+                fontSize: 35,
               ),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
           DropdownButton<String>(
+            iconSize: 75,
             items: _cidades.map((String dropDownStringItem) {
               return DropdownMenuItem<String>(
                 value: dropDownStringItem,
