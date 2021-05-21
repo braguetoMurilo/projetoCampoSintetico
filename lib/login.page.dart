@@ -1,106 +1,121 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_campo/Helpers/validators.dart';
 import 'package:projeto_campo/reset-password.page.dart';
 import 'package:projeto_campo/who.are.you.dart';
 import 'package:projeto_campo/choose.field.dart';
 import 'package:projeto_campo/field.research.dart';
 
-
 class LoginPage extends StatelessWidget {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("images/futebool.jpg"),
               fit: BoxFit.cover,
-            )),
-        padding: EdgeInsets.only(
-          top: 35.0,
-          left: 40.0,
-          right: 40.0,
-        ),
-        child: ListView(
-          children: <Widget>[
-            SizedBox(
-              child: Image.asset(
-                "images/logo.png",
-                fit: BoxFit.none,
+            ),
+          ),
+          child: Form(
+            key: formKey,
+            child: ListView(
+              padding: EdgeInsets.only(
+                top: 35.0,
+                left: 40.0,
+                right: 40.0,
               ),
-              width: 128.0,
-              height: 128.0,
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
-            TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: "E-mail ou Nome de usuário",
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 25.0,
+              children: <Widget>[
+                SizedBox(
+                  child: Image.asset(
+                    "images/logo.png",
+                    fit: BoxFit.none,
+                  ),
+                  width: 128.0,
+                  height: 128.0,
                 ),
-              ),
-              style: TextStyle(
-                fontSize: 20.0,
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            TextFormField(
-              keyboardType: TextInputType.text,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: "Senha",
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 25.0,
+                SizedBox(
+                  height: 40.0,
                 ),
-              ),
-              style: TextStyle(
-                fontSize: 20.0,
-              ),
-            ),
-            Container(
-              height: 40.0,
-              alignment: Alignment.center,
-              child: FlatButton(
-                child: Text(
-                  "Recuperar Senha",
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    labelText: "E-mail ou Nome de usuário",
+                    labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 25.0,
+                    ),
+                  ),
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
+                    fontSize: 20.0,
+                  ),
+                  validator: (email) {
+                    if (!emailValidad(email)) return 'E-mail inválido';
+                    return null;
+                  },
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: "Senha",
+                    labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 25.0,
+                    ),
+                  ),
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+                  validator: (pass) {
+                    if (pass.isEmpty || pass.length < 6)
+                      return 'Senha Inválida';
+                    return null;
+                  },
+                ),
+                Container(
+                  height: 40.0,
+                  alignment: Alignment.center,
+                  child: FlatButton(
+                    child: Text(
+                      "Recuperar Senha",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ResetPasswordPage(),
+                        ),
+                      );
+                    },
                   ),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ResetPasswordPage(),
-                    ),
-                  );
-                },
-              ),
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
-            Container(
-              height: 60.0,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
+                SizedBox(
+                  height: 40.0,
                 ),
-              ),
-              child: SizedBox.expand(
-                  child: FlatButton(
+                Container(
+                  height: 60.0,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
+                  child: SizedBox.expand(
+                      child: FlatButton(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -115,29 +130,31 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DropDown(),
-                        ),
-                      );
+                      if(formKey.currentState.validate()){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DropDown(),
+                          ),
+                        );
+                      };
                     },
                   )),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Container(
-              height: 60.0,
-              alignment: Alignment.centerRight,
-              decoration: BoxDecoration(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
                 ),
-              ),
-              child: SizedBox.expand(
-                  child: FlatButton(
+                SizedBox(
+                  height: 10.0,
+                ),
+                Container(
+                  height: 60.0,
+                  alignment: Alignment.centerRight,
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
+                  child: SizedBox.expand(
+                      child: FlatButton(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -160,33 +177,33 @@ class LoginPage extends StatelessWidget {
                     ),
                     onPressed: () {},
                   )),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Container(
-              height: 40.0,
-              child: FlatButton(
-                child: Text(
-                  "Cadastre-se",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                  ),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => WhoAreYou()
+                SizedBox(
+                  height: 10.0,
+                ),
+                Container(
+                  height: 40.0,
+                  child: FlatButton(
+                    child: Text(
+                      "Cadastre-se",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                      ),
                     ),
-                  );
-                },
-              ),
-            )
-          ],
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WhoAreYou()),
+                      );
+                    },
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
