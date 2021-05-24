@@ -1,17 +1,28 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_campo/Helpers/validators.dart';
+import 'package:projeto_campo/models/user.dart';
+import 'package:projeto_campo/models/user_manager.dart';
 import 'package:projeto_campo/reset-password.page.dart';
 import 'package:projeto_campo/who.are.you.dart';
 import 'package:projeto_campo/choose.field.dart';
 import 'package:projeto_campo/field.research.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passController = TextEditingController();
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+      return Provider(
+          create: (_) => UserManager(),
+        child: Scaffold(
+          key: scaffoldKey,
+        body: Center(
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -40,6 +51,7 @@ class LoginPage extends StatelessWidget {
                   height: 40.0,
                 ),
                 TextFormField(
+                  controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     labelText: "E-mail ou Nome de usuário",
@@ -61,6 +73,7 @@ class LoginPage extends StatelessWidget {
                   height: 10.0,
                 ),
                 TextFormField(
+                  controller: passController,
                   keyboardType: TextInputType.text,
                   obscureText: true,
                   decoration: InputDecoration(
@@ -131,15 +144,33 @@ class LoginPage extends StatelessWidget {
                     ),
                     onPressed: () {
                       if(formKey.currentState.validate()){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DropDown(),
+                        context.read<UserManager>().signIn(
+                          user: User(
+                            email: emailController.text,
+                            password: passController.text,
                           ),
+                          onFail: (e){
+                            scaffoldKey.currentState.showSnackBar(
+                              SnackBar(
+                                  content:  Text("Falha ao entrar: $e"),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                          },
+                          onSucces: (){
+                            print('Sucesso');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DropDown(),
+                              ),
+                            );
+                          },
                         );
                       };
                     },
-                  )),
+                  ),
+                  ),
                 ),
                 SizedBox(
                   height: 10.0,
@@ -205,7 +236,11 @@ class LoginPage extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+        ),
+        ),
+      );
+
+
+
   }
 }
