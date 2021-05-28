@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto_campo/Helpers/validators.dart';
 import 'package:projeto_campo/models/user.dart';
 import 'package:projeto_campo/models/user_manager.dart';
+import 'package:projeto_campo/multi.factor.dart';
 import 'package:projeto_campo/reset-password.page.dart';
 import 'package:projeto_campo/who.are.you.dart';
 import 'package:projeto_campo/choose.field.dart';
@@ -162,7 +163,7 @@ class LoginPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => DropDown(),
+                                builder: (context) => MultiFactor(),
                               ),
                             );
                           },

@@ -33,6 +33,7 @@ class WhoAreYou extends StatelessWidget {
             Text("Quem é você?",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30.0, color: Colors.white)),
+
             Icon(Icons.person_outline_outlined,
                 size: 253.0, color: Colors.black),
             Row(

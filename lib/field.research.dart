@@ -5,18 +5,17 @@ class DropDown extends StatefulWidget {
   _DropDownState createState() => _DropDownState();
 }
 
-
 class _DropDownState extends State<DropDown> {
-
   var _cidades = ['Cascavel', 'Toledo', 'Palotina'];
   var _itemSelecionado = "Cascavel";
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black54,
+        backgroundColor: Colors.deepOrangeAccent,
         elevation: 0.0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -28,6 +27,7 @@ class _DropDownState extends State<DropDown> {
       body: criaDropDownButton(),
     );
   }
+
   criaDropDownButton() {
     return Container(
         child: SingleChildScrollView(
@@ -66,15 +66,17 @@ class _DropDownState extends State<DropDown> {
             },
             value: _itemSelecionado,
           ),
-
           SizedBox(
             height: 50.0,
           ),
           RaisedButton(
-            color: Colors.red,
+            color: Colors.deepOrangeAccent,
             child: Text(
               'Confirmar filtros',
-              style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
             ),
             onPressed: () {
               if (!_formKey.currentState.validate()) {

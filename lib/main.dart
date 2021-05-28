@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 void main(){
   runApp(MyApp());
 
-    Firestore.instance.collection("Teste").add({"Teste" : "Teste"});
+   // Firestore.instance.collection("Teste").add({"Marcos" : "Teste"});
 }
 
 
