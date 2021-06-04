@@ -7,26 +7,25 @@ import 'package:provider/provider.dart';
 
 
 
-void main(){
+void main() async{
+  Provider.debugCheckInvalidValueType = null;
   runApp(MyApp());
 
-   // Firestore.instance.collection("Teste").add({"Marcos" : "Teste"});
 }
-
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Provider(
+    return ChangeNotifierProvider(
       create: (_) => UserManager(),
+      lazy: false,
       child: MaterialApp(
         title: 'Projeto Campo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.deepOrange,
         ),
-        home: LoginPage(
-        ),
+        home: LoginPage(),
       ),
     );
   }
