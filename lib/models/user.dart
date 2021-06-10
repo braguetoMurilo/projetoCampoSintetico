@@ -2,12 +2,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class User {
 
-  User({this.email, this.password, this.name, this.id});
+  User({this.email, this.password, this.name, this.id, this.nomeLocal, this.endereco, this.cnpj});
 
   String id;
   String name;
   String email;
   String password;
+  String nomeLocal;
+  String endereco;
+  String cnpj;
+
 
   String confirmPassword;
 
@@ -22,6 +26,9 @@ class User {
     return {
       'name': name,
       'email': email,
+      'nome local': nomeLocal,
+      'Endereço': endereco,
+      'CNPJ': cnpj,
     };
   }
 }
