@@ -69,7 +69,7 @@ class LoginPage extends StatelessWidget {
                           fontSize: 20.0,
                         ),
                         validator: (email) {
-                          if (!emailValidad(email)) return 'E-mail inválido';
+                          if (!emailValidad(email)) return 'E-mail inválido !';
                           return null;
                         },
                       ),
