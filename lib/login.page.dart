@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
                 builder: (_, userManager, __) {
                   return ListView(
                     padding: EdgeInsets.only(
-                      top: 35.0,
+                      top: 95.0,
                       left: 40.0,
                       right: 40.0,
                     ),
@@ -60,7 +60,7 @@ class LoginPage extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: "E-mail ou Nome de usuário",
                           labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontWeight: FontWeight.w800,
                             fontSize: 25.0,
                           ),
@@ -84,7 +84,7 @@ class LoginPage extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: "Senha",
                           labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontWeight: FontWeight.w800,
                             fontSize: 25.0,
                           ),
@@ -107,7 +107,7 @@ class LoginPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                           onPressed: () {
@@ -173,7 +173,6 @@ class LoginPage extends StatelessWidget {
                                   },
                                 );
                               }
-                              ;
                             },
                           ),
                         ),
@@ -227,7 +226,7 @@ class LoginPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                           onPressed: () {
