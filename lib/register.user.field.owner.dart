@@ -100,7 +100,7 @@ class FormFieldOwner extends StatelessWidget {
                     obscureText: true,
                     validator: (pass) {
                       if (pass.isEmpty)
-                        return 'Campo obrigatorio';
+                        return 'Campo obrigatorio !';
                       else if (pass.length < 6) return 'Senha muito curta';
                       return null;
                     },

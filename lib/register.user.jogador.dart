@@ -115,7 +115,7 @@ class FormPlayer extends StatelessWidget {
                                   debugPrint("Sucesso");
                                   scaffoldKey.currentState.showSnackBar(
                                     SnackBar(
-                                      content: const Text("Cadastrado com sucesso !!"),
+                                      content: const Text("Cadastrado com sucesso !"),
                                       backgroundColor: Colors.green,
                                     ),
                                   );
