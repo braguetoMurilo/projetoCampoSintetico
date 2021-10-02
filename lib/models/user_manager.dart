@@ -23,9 +23,7 @@ class UserManager extends ChangeNotifier {
   Future<void> signIn({User user, Function onFail, Function onSucces}) async {
     loading = true;
     try {
-      final AuthResult result = await auth.signInWithEmailAndPassword(
-          email: user.email, password: user.password);
-
+      final AuthResult result = await auth.signInWithEmailAndPassword(email: user.email, password: user.password);
       this.user = result.user;
 
       onSucces();
@@ -33,6 +31,8 @@ class UserManager extends ChangeNotifier {
       onFail(getErrorString(e.code));
     }
     loading = false;
+
+
 
   }
 
@@ -53,6 +53,13 @@ class UserManager extends ChangeNotifier {
     loading = false;
   }
 
+  Future<void> sendPasswordResetEmail() async {
+     return auth.sendPasswordResetEmail(email: user.email);
+
+  }
+
+
+
   set loading(bool value){
     _loading = value;
     notifyListeners();
@@ -66,6 +73,9 @@ class UserManager extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+
+
 
 
 

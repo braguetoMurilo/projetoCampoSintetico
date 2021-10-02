@@ -4,11 +4,11 @@ import 'package:projeto_campo/Helpers/validators.dart';
 import 'package:projeto_campo/models/user.dart';
 import 'package:projeto_campo/models/user_manager.dart';
 import 'package:projeto_campo/multi.factor.dart';
-import 'package:projeto_campo/reset-password.page.dart';
 import 'package:projeto_campo/who.are.you.dart';
 import 'package:projeto_campo/choose.field.dart';
 import 'package:projeto_campo/field.research.dart';
 import 'package:provider/provider.dart';
+
 
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -16,6 +16,7 @@ class LoginPage extends StatelessWidget {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -110,11 +111,12 @@ class LoginPage extends StatelessWidget {
                               color: Colors.white,
                             ),
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ResetPasswordPage(),
+                          onPressed:  () {
+                            userManager.sendPasswordResetEmail();
+                            scaffoldKey.currentState.showSnackBar(
+                              SnackBar(
+                                content: const Text("As informações para redefinir a senha foram enviadas em seu email !"),
+                                backgroundColor: Colors.green,
                               ),
                             );
                           },
@@ -248,4 +250,19 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
