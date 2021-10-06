@@ -68,6 +68,8 @@ class LoginPage extends StatelessWidget {
                         ),
                         style: TextStyle(
                           fontSize: 20.0,
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
                         ),
                         validator: (email) {
                           if (!emailValidad(email)) return 'E-mail inválido !!';
@@ -92,6 +94,8 @@ class LoginPage extends StatelessWidget {
                         ),
                         style: TextStyle(
                           fontSize: 20.0,
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
                         ),
                         validator: (pass) {
                           if (pass.isEmpty || pass.length < 6)

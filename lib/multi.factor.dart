@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-
 import 'field.research.dart';
+import 'package:projeto_campo/models/user_manager.dart';
 
 class MultiFactor extends StatelessWidget {
   @override
@@ -22,7 +21,7 @@ class MultiFactor extends StatelessWidget {
               fit: BoxFit.cover,
             )),
         padding: EdgeInsets.only(
-          top: 25.0,
+          top: 0,
           left: 40.0,
           right: 40.0,
         ),
@@ -39,10 +38,11 @@ class MultiFactor extends StatelessWidget {
               height: 20.0,
             ),
             Text(
-              "Autenticação de multi fator",
+              "Autenticação de multi-fator",
               style: TextStyle(
-                fontSize: 32,
+                fontSize: 40,
                 fontWeight: FontWeight.w800,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
@@ -54,7 +54,7 @@ class MultiFactor extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w800,
-                color: Colors.black,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),

@@ -53,11 +53,15 @@ class UserManager extends ChangeNotifier {
     loading = false;
   }
 
-  Future<void> sendPasswordResetEmail() async {
+  Future<void> sendPasswordResetEmail() {
      return auth.sendPasswordResetEmail(email: user.email);
 
   }
 
+  Future<void> sendSignInLinkToEmail({Function onFail, Function onSuccess}) async {
+    return auth.sendSignInWithEmailLink(email: user.email);
+
+  }
 
 
   set loading(bool value){
